@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h4 class="text-center">Nueva Empresa</h4>
+        <hr>
+        <form>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="business.name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="business.email">
+            </div>
+            <div class="form-group">
+                <label>CUIT</label>
+                <input type="text" class="form-control" name="cuit" [(ngModel)]="business.cuit">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="save()">Guardar</button>
+        </form>
+    </div>
+</div>
