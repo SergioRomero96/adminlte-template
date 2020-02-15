@@ -1,0 +1,22 @@
+<h4 class="text-center">Nuevo Lugar</h4>
+<hr>
+<form>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="businessPlace.name">
+    </div>
+    <div class="form-group">
+        <label>Type</label>
+        <select class="form-control" name="type" [(ngModel)]="businessPlace.type">
+            <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+    </div>
+    
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+            (dragEnd)="markerDragEnd($event)" >
+        </agm-marker>
+    </agm-map>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="save()">Guardar</button>
+</form>

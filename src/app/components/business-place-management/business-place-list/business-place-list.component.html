@@ -1,0 +1,26 @@
+<div class="form-group">
+    <button type="button" class="btn btn-primary" (click)="newBusinessPlace()">
+        <i class="fa fa-plus"></i> Nuevo Lugar
+    </button>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bp of businessPlacesList">
+                <td>{{bp.name}}</td>
+                <td>{{bp.type}}</td>
+                <td>{{bp.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="alert alert-warning" role="alert" *ngIf="listIsEmpty">
+    No hay lugar registrado...
+</div>

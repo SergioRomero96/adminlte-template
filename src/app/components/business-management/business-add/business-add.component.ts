@@ -23,6 +23,7 @@ export class BusinessAddComponent implements OnInit {
     this.businessService.addBusiness(this.business).subscribe(
       result => {
         alert("Empresa agregado correctamente");
+        this.router.navigate(['business-list']);
       },
       error => {
         alert("Error al agregar");
